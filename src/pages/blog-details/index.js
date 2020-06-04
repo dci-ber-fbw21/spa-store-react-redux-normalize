@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class BlogDetails extends Component {
     state = {
@@ -9,6 +10,7 @@ class BlogDetails extends Component {
     render() {
         return (
             <div>
+                <Link to="/">Back</Link>
                 {/* posts details page */}
                 <h1>Blog details</h1>
                 {/* We get this prop from the router, this is the dynamic part of the URL */}
@@ -48,7 +50,7 @@ class BlogDetails extends Component {
                     this.props.comments.map((comment) => {
 
                         return (
-                            <div>{comment.text}</div>
+                            <div style={{ padding: '20px' }} key={comment.id}>{comment.text}</div>
                         )
                     })
                 }
