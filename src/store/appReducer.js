@@ -8,10 +8,6 @@ const normalizedPosts = posts.reduce((acc, postEntry) => {
     return acc;
 }, {});
 
-const initialCommentsState = {
-    comments: {}
-};
-
 // Comments reducer, it will be an object where the keys are the comment ids, and the value is the comment object
 function commentsReducer(state = {}, action) {
     switch (action.type) {
